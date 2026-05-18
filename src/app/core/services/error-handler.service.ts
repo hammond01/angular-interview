@@ -32,7 +32,7 @@ export class GlobalErrorHandler implements ErrorHandler {
     this.router = injector.get(Router);
   }
 
-  handleError(error: Error | any): void {
+  handleError(error: unknown): void {
     const appError = this.normalizeError(error);
 
     // Log the error
@@ -49,7 +49,7 @@ export class GlobalErrorHandler implements ErrorHandler {
     this.notifyUser(appError);
   }
 
-  private normalizeError(error: any): AppError {
+  private normalizeError(error: unknown): AppError {
     const appError: AppError = {
       message: 'An unexpected error occurred',
       timestamp: new Date(),
@@ -61,16 +61,21 @@ export class GlobalErrorHandler implements ErrorHandler {
     } else if (typeof error === 'string') {
       appError.message = error;
     } else if (error && typeof error === 'object') {
+      const errorObject = error as Record<string, unknown>;
+
       // Handle HTTP errors, custom errors, etc.
-      if (error.status) {
-        appError.statusCode = error.status;
-        appError.message = error.message || `HTTP Error ${error.status}`;
-        appError.details = error.error;
-      } else if (error.message) {
-        appError.message = error.message;
-        appError.details = error;
+      if (typeof errorObject['status'] === 'number') {
+        const status = errorObject['status'];
+        const message = errorObject['message'];
+
+        appError.statusCode = status;
+        appError.message = typeof message === 'string' ? message : `HTTP Error ${status}`;
+        appError.details = errorObject['error'];
+      } else if (typeof errorObject['message'] === 'string') {
+        appError.message = errorObject['message'];
+        appError.details = errorObject;
       } else {
-        appError.details = error;
+        appError.details = errorObject;
       }
     }
 
@@ -108,8 +113,8 @@ export class GlobalErrorHandler implements ErrorHandler {
     // Example:
     // this.snackBar.open(error.message, 'Close', { duration: 5000 });
 
-    // For now, just log to console
-    console.error('User notification:', error.message);
+    // For now, publish a warning log entry until toast/snackbar is added.
+    this.logger.warn(`User notification: ${error.message}`);
   }
 
   private navigateToLogin(): void {

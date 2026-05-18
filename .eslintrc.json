@@ -57,6 +57,8 @@
           "warn",
           {
             "allow": [
+              "debug",
+              "info",
               "warn",
               "error"
             ]

@@ -118,13 +118,8 @@ export class LoggerService {
 
     // Log to console in development
     const levelName = LogLevel[level];
-    const consoleMethod = this.getConsoleMethod(level);
-
-    if (data) {
-      console[consoleMethod](`[${levelName}] ${message}`, data);
-    } else {
-      console[consoleMethod](`[${levelName}] ${message}`);
-    }
+    const formattedMessage = `[${levelName}] ${message}`;
+    this.writeConsoleMessage(level, formattedMessage, data);
 
     if (error) {
       console.error('Error details:', error);
@@ -134,16 +129,38 @@ export class LoggerService {
     // Example: this.sendToRemoteLogger(entry);
   }
 
-  private getConsoleMethod(level: LogLevel): 'debug' | 'info' | 'warn' | 'error' {
+  private writeConsoleMessage(level: LogLevel, message: string, data?: unknown): void {
+    const hasData = data !== undefined;
+
     switch (level) {
       case LogLevel.DEBUG:
-        return 'debug';
+        if (hasData) {
+          console.debug(message, data);
+        } else {
+          console.debug(message);
+        }
+        break;
       case LogLevel.INFO:
-        return 'info';
+        if (hasData) {
+          console.info(message, data);
+        } else {
+          console.info(message);
+        }
+        break;
       case LogLevel.WARN:
-        return 'warn';
+        if (hasData) {
+          console.warn(message, data);
+        } else {
+          console.warn(message);
+        }
+        break;
       case LogLevel.ERROR:
-        return 'error';
+        if (hasData) {
+          console.error(message, data);
+        } else {
+          console.error(message);
+        }
+        break;
     }
   }
 
