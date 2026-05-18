@@ -6,7 +6,7 @@ import { InterviewStep } from '../../../../core/models/interview-step.model';
   selector: 'app-step-list',
   templateUrl: './step-list.component.html',
   styleUrl: './step-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepListComponent {
   readonly steps = input.required<InterviewStep[]>();

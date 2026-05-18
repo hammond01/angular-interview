@@ -20,15 +20,17 @@ import { StepListComponent } from './components/step-list/step-list.component';
   styleUrl: './interview-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'role': 'main'
-  }
+    role: 'main',
+  },
 })
 export class InterviewPageComponent {
   protected readonly showKeyboardHint = signal(true);
   private readonly interviewService = inject(InterviewService);
 
   protected readonly title = signal('Angular interview flow');
-  protected readonly subtitle = signal('A tiny demo app that shows how Angular bootstrap, signals, computed values, and native control flow fit together.');
+  protected readonly subtitle = signal(
+    'A tiny demo app that shows how Angular bootstrap, signals, computed values, and native control flow fit together.',
+  );
   protected readonly steps = this.interviewService.stepsView;
   protected readonly talkingPoints = this.interviewService.talkingPointsView;
   protected readonly activeStepId = this.interviewService.activeStepIdView;

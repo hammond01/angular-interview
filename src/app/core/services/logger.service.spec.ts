@@ -126,9 +126,7 @@ describe('LoggerService', () => {
       const afterTime = new Date();
 
       const logs = service.getLogs();
-      expect(logs[0].timestamp.getTime()).toBeGreaterThanOrEqual(
-        beforeTime.getTime(),
-      );
+      expect(logs[0].timestamp.getTime()).toBeGreaterThanOrEqual(beforeTime.getTime());
       expect(logs[0].timestamp.getTime()).toBeLessThanOrEqual(afterTime.getTime());
     });
   });

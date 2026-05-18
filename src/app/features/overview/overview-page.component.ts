@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 /**
@@ -13,6 +13,6 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   templateUrl: './overview-page.component.html',
   styleUrl: './overview-page.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverviewPageComponent {}

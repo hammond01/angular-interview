@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 export enum LogLevel {
   DEBUG = 0,
@@ -95,12 +95,7 @@ export class LoggerService {
     return JSON.stringify(this.logs, null, 2);
   }
 
-  private log(
-    level: LogLevel,
-    message: string,
-    data?: unknown,
-    error?: Error,
-  ): void {
+  private log(level: LogLevel, message: string, data?: unknown, error?: Error): void {
     // Only log if level is >= configured logLevel
     if (level < this.logLevel) {
       return;
@@ -139,9 +134,7 @@ export class LoggerService {
     // Example: this.sendToRemoteLogger(entry);
   }
 
-  private getConsoleMethod(
-    level: LogLevel,
-  ): 'debug' | 'info' | 'warn' | 'error' {
+  private getConsoleMethod(level: LogLevel): 'debug' | 'info' | 'warn' | 'error' {
     switch (level) {
       case LogLevel.DEBUG:
         return 'debug';

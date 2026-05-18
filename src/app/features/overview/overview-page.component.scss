@@ -90,7 +90,11 @@ h2 {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
 .button:hover {

@@ -13,7 +13,7 @@ import { InterviewStep } from '../models/interview-step.model';
  * - This follows single responsibility and makes testing easier
  */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InterviewService {
   private readonly steps = signal<InterviewStep[]>(this.cloneSteps(INITIAL_STEPS));
@@ -41,9 +41,7 @@ export class InterviewService {
 
   toggleStepDone(stepId: number): void {
     this.steps.update((steps) =>
-      steps.map((step) =>
-        step.id === stepId ? { ...step, done: !step.done } : step
-      )
+      steps.map((step) => (step.id === stepId ? { ...step, done: !step.done } : step)),
     );
   }
 

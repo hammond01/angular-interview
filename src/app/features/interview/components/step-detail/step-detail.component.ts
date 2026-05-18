@@ -6,7 +6,7 @@ import { InterviewStep, TalkingPoint } from '../../../../core/models/interview-s
   selector: 'app-step-detail',
   templateUrl: './step-detail.component.html',
   styleUrl: './step-detail.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepDetailComponent {
   readonly step = input.required<InterviewStep>();
