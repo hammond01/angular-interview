@@ -1,0 +1,70 @@
+{
+  "name": "angular-interview",
+  "version": "1.0.0",
+  "description": "A professional, production-ready Angular 21 project for interview preparation demonstrating modern patterns and best practices",
+  "keywords": [
+    "angular",
+    "typescript",
+    "signals",
+    "interview",
+    "standalone-components",
+    "lazy-loading",
+    "responsive-design"
+  ],
+  "author": "Hammond",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hammond01/angular-interview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hammond01/angular-interview/issues"
+  },
+  "homepage": "https://github.com/hammond01/angular-interview#readme",
+  "scripts": {
+    "ng": "ng",
+    "dev": "ng serve",
+    "start": "ng serve",
+    "hmr": "ng serve --hmr",
+    "build": "ng build",
+    "preview": "ng serve dist/angular-init --spa-fallback",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "test:watch": "ng test --watch",
+    "test:coverage": "ng test --code-coverage --watch=false",
+    "lint": "ng lint",
+    "format": "prettier --write \"src/**/*.{ts,html,scss,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss,json,md}\"",
+    "analyze": "ng build --stats-json && webpack-bundle-analyzer dist/angular-init/stats.json"
+  },
+  "private": true,
+  "packageManager": "npm@11.12.1",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.11",
+    "@angular/cli": "^21.2.11",
+    "@angular/compiler-cli": "^21.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-angular": "^4.1.0",
+    "jsdom": "^28.0.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
+  }
+}

@@ -1,0 +1,85 @@
+<main>
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="eyebrow">Getting started</p>
+      <h1>Angular Interview Structure</h1>
+      <p class="lede">
+        This project demonstrates key Angular concepts through a hands-on example. Follow the interview flow to learn
+        how modern Angular handles state, routing, and component architecture.
+      </p>
+
+      <div class="hero__actions">
+        <a routerLink="/interview" class="button button--solid">Start Interview Flow</a>
+        <a href="https://angular.dev" target="_blank" class="button button--ghost">Angular Docs</a>
+      </div>
+    </div>
+
+    <aside class="hero__stats">
+      <h2>What You'll Learn</h2>
+      <ul class="feature-list">
+        <li><strong>Bootstrap:</strong> How main.ts and app.config.ts set up the app.</li>
+        <li><strong>Signals & Computed:</strong> Modern state management without RxJS boilerplate.</li>
+        <li><strong>Lazy Routes:</strong> Load features on demand for better performance.</li>
+        <li><strong>Components & DI:</strong> Component hierarchy and dependency injection patterns.</li>
+        <li><strong>Templates:</strong> Native control flow with &#64;for, &#64;if instead of legacy directives.</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="layout">
+    <article class="card">
+      <div class="card__header">
+        <p class="eyebrow">Project Structure</p>
+        <h2>File Organization</h2>
+      </div>
+
+      <ul class="directory-list">
+        <li>
+          <strong>src/app/core/</strong>
+          <p>Shared models, data, services.</p>
+        </li>
+        <li>
+          <strong>src/app/features/</strong>
+          <p>Feature modules (interview, overview) lazy-loaded by route.</p>
+        </li>
+        <li>
+          <strong>src/app/app.ts</strong>
+          <p>Root shell component with navigation.</p>
+        </li>
+        <li>
+          <strong>src/app/app.routes.ts</strong>
+          <p>Route configuration with lazy loading.</p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card__header">
+        <p class="eyebrow">Key Concepts</p>
+        <h2>What to Mention in Interview</h2>
+      </div>
+
+      <div class="concept-grid">
+        <section class="concept">
+          <h3>Signals</h3>
+          <p>Local reactive state that updates components efficiently with OnPush.</p>
+        </section>
+
+        <section class="concept">
+          <h3>Services</h3>
+          <p>Singleton logic centralized in services, injected via dependency injection.</p>
+        </section>
+
+        <section class="concept">
+          <h3>Lazy Loading</h3>
+          <p>Features loaded only when their route is accessed, reducing initial bundle.</p>
+        </section>
+
+        <section class="concept">
+          <h3>Components</h3>
+          <p>Small, focused units with clear input/output boundaries.</p>
+        </section>
+      </div>
+    </article>
+  </section>
+</main>

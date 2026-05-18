@@ -1,0 +1,64 @@
+<main>
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="eyebrow">Interview warm-up</p>
+      <h1>{{ title() }}</h1>
+      <p class="lede">{{ subtitle() }}</p>
+
+      <div class="hero__actions">
+        <button class="button button--solid" type="button" (click)="nextStep()">Next step</button>
+        <button class="button button--ghost" type="button" (click)="resetFlow()">Reset</button>
+      </div>
+    </div>
+
+    <aside class="hero__stats" aria-label="Flow progress">
+      <div class="stat">
+        <span class="stat__label">Completed</span>
+        <strong>{{ completedCount() }}/{{ steps().length }}</strong>
+      </div>
+
+      <div class="stat">
+        <span class="stat__label">Progress</span>
+        <strong>{{ progress() }}%</strong>
+      </div>
+
+      <div class="progress" aria-hidden="true">
+        <span [style.width.%]="progress()"></span>
+      </div>
+
+      <p class="progress__hint">
+        Signals hold the state, computed values derive progress, and the template reacts automatically.
+      </p>
+
+      @if (showKeyboardHint()) {
+        <div class="keyboard-hint">
+          <p class="keyboard-hint__label">💡 Keyboard shortcuts:</p>
+          <span class="keyboard-hint__keys">← → Navigate</span>
+          <span class="keyboard-hint__keys">Space Mark Done</span>
+          <button
+            type="button"
+            class="keyboard-hint__close"
+            (click)="hideKeyboardHint()"
+            aria-label="Dismiss keyboard hints"
+          >
+            ✕
+          </button>
+        </div>
+      }
+    </aside>
+  </section>
+
+  <section class="layout">
+    <app-step-list
+      [steps]="steps()"
+      [activeStepId]="activeStepId()"
+      (stepSelected)="selectStep($event)"
+    />
+
+    <app-step-detail
+      [step]="activeStep()"
+      [talkingPoints]="talkingPoints"
+      (toggleDone)="toggleStepDone($event)"
+    />
+  </section>
+</main>

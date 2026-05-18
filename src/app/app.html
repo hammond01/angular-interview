@@ -1,0 +1,19 @@
+<header class="app-shell">
+  <div class="app-shell__bar">
+    <div class="app-shell__left">
+      <p class="app-shell__tag">Mock interview project</p>
+      <h1>{{ title }}</h1>
+    </div>
+
+    <nav class="app-shell__nav" aria-label="Main navigation">
+      <a routerLink="/" routerLinkActive="app-shell__nav-link--active" [routerLinkActiveOptions]="{ exact: true }" class="app-shell__nav-link">
+        Overview
+      </a>
+      <a routerLink="/interview" routerLinkActive="app-shell__nav-link--active" class="app-shell__nav-link">
+        Interview Flow
+      </a>
+    </nav>
+  </div>
+</header>
+
+<router-outlet />

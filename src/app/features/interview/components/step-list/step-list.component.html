@@ -1,0 +1,30 @@
+<article class="panel">
+  <div class="panel__header">
+    <div>
+      <p class="eyebrow">App flow</p>
+      <h2>What Angular does from boot to UI</h2>
+    </div>
+  </div>
+
+  <div class="step-list">
+    @for (step of steps(); track step.id) {
+      <button
+        type="button"
+        class="step-card"
+        [class.step-card--active]="step.id === activeStepId()"
+        [class.step-card--done]="step.done"
+        (click)="selectStep(step.id)"
+      >
+        <span class="step-card__index">0{{ step.id }}</span>
+
+        <div class="step-card__body">
+          <div class="step-card__top">
+            <h3>{{ step.title }}</h3>
+            <span class="step-card__status">{{ step.done ? 'Done' : 'Open' }}</span>
+          </div>
+          <p>{{ step.summary }}</p>
+        </div>
+      </button>
+    }
+  </div>
+</article>
