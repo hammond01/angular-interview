@@ -5,27 +5,27 @@
    ============================================================================ */
 
 :root {
-  /* Primary Colors - Modern Pink/Purple Palette */
-  --color-primary: #d946ef; /* Vibrant Pink/Magenta */
-  --color-primary-light: #ec4899; /* Light Pink */
-  --color-primary-dark: #be185d; /* Dark Pink */
+  /* Primary Colors - Deep Ocean */
+  --color-primary: #0f4c81;
+  --color-primary-light: #2563eb;
+  --color-primary-dark: #0b355a;
 
   /* Accent Colors */
-  --color-accent: #0891b2; /* Cyan */
-  --color-accent-light: #06b6d4;
-  --color-accent-dark: #0e7490;
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  --color-accent-dark: #b45309;
 
   /* Neutral Colors */
-  --color-bg-primary: #ffffff; /* White */
-  --color-bg-secondary: #f8f6f4; /* Off-white/Beige */
-  --color-bg-tertiary: #f0ede8; /* Light gray */
+  --color-bg-primary: #f6f8fb;
+  --color-bg-secondary: #eef3f9;
+  --color-bg-tertiary: #e4ebf4;
   --color-surface: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
   --color-surface-hover: rgba(255, 255, 255, 0.95);
 
   /* Text Colors */
-  --color-text-primary: #1a1a1a; /* Almost black */
-  --color-text-secondary: #666666; /* Medium gray */
-  --color-text-tertiary: #999999; /* Light gray */
+  --color-text-primary: #10253f;
+  --color-text-secondary: #47607c;
+  --color-text-tertiary: #6f86a0;
   --color-text-inverse: #ffffff; /* White */
 
   /* Borders & Dividers */
@@ -49,8 +49,8 @@
 
   /* Typography */
   --font-family-sans:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
+    'Aptos', 'IBM Plex Sans', 'Segoe UI Variable', 'Segoe UI', 'Trebuchet MS', sans-serif;
+  --font-family-display: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
   --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
   --font-size-xs: 12px;
@@ -134,8 +134,8 @@ body::before {
     45deg,
     transparent,
     transparent 2px,
-    rgba(217, 70, 239, 0.03) 2px,
-    rgba(217, 70, 239, 0.03) 4px
+    rgba(15, 76, 129, 0.04) 2px,
+    rgba(15, 76, 129, 0.04) 4px
   );
   pointer-events: none;
   z-index: -1;
@@ -242,16 +242,16 @@ button {
   &--primary {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     color: var(--color-text-inverse);
-    box-shadow: 0 4px 15px rgba(217, 70, 239, 0.3);
+    box-shadow: 0 4px 15px rgba(15, 76, 129, 0.26);
 
     &:hover {
-      box-shadow: 0 6px 20px rgba(217, 70, 239, 0.4);
+      box-shadow: 0 6px 20px rgba(15, 76, 129, 0.35);
       transform: translateY(-2px);
     }
 
     &:active {
       transform: translateY(0);
-      box-shadow: 0 2px 10px rgba(217, 70, 239, 0.2);
+      box-shadow: 0 2px 10px rgba(15, 76, 129, 0.2);
     }
   }
 
@@ -261,11 +261,11 @@ button {
     border: 2px solid var(--color-primary);
 
     &:hover {
-      background: rgba(217, 70, 239, 0.05);
+      background: rgba(15, 76, 129, 0.06);
     }
 
     &:active {
-      background: rgba(217, 70, 239, 0.1);
+      background: rgba(15, 76, 129, 0.11);
     }
   }
 
@@ -277,7 +277,7 @@ button {
     &:hover {
       border-color: var(--color-primary);
       color: var(--color-primary);
-      background: rgba(217, 70, 239, 0.02);
+      background: rgba(15, 76, 129, 0.04);
     }
   }
 
@@ -315,7 +315,7 @@ select {
   &:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(217, 70, 239, 0.1);
+    box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.14);
   }
 
   &::placeholder {

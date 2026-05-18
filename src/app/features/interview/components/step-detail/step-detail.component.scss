@@ -56,7 +56,7 @@ h3 {
 }
 
 .button:hover {
-  background: rgba(217, 70, 239, 0.1);
+  background: rgba(15, 76, 129, 0.1);
   transform: translateY(-2px);
 }
 
@@ -84,8 +84,8 @@ h3 {
   margin-top: var(--spacing-xl);
   padding: var(--spacing-lg);
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(217, 70, 239, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
-  border: 1px solid rgba(217, 70, 239, 0.1);
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.07) 0%, rgba(245, 158, 11, 0.09) 100%);
+  border: 1px solid rgba(15, 76, 129, 0.14);
 }
 
 .code-card__label {
@@ -119,8 +119,8 @@ code {
   gap: var(--spacing-md);
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(217, 70, 239, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
-  border: 1px solid rgba(217, 70, 239, 0.1);
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.07) 0%, rgba(245, 158, 11, 0.09) 100%);
+  border: 1px solid rgba(15, 76, 129, 0.14);
 }
 
 .talk-card p {

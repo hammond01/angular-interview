@@ -44,7 +44,7 @@ h2 {
   padding: var(--spacing-md);
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-border-light);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(217, 70, 239, 0.02) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(15, 76, 129, 0.04) 100%);
   color: var(--color-text-primary);
   text-align: left;
   cursor: pointer;
@@ -53,7 +53,7 @@ h2 {
 
 .step-card:hover {
   border-color: var(--color-primary);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(217, 70, 239, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(15, 76, 129, 0.1) 100%);
   box-shadow: var(--shadow-md);
 }
 
@@ -64,8 +64,8 @@ h2 {
 
 .step-card--active {
   border-color: var(--color-primary);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(217, 70, 239, 0.1) 100%);
-  box-shadow: 0 4px 12px rgba(217, 70, 239, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(15, 76, 129, 0.12) 100%);
+  box-shadow: 0 4px 12px rgba(15, 76, 129, 0.16);
 }
 
 .step-card--done .step-card__index,
@@ -121,7 +121,7 @@ h2 {
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: rgba(217, 70, 239, 0.1);
+  background: rgba(15, 76, 129, 0.1);
   color: var(--color-primary);
 }
 
