@@ -31,8 +31,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:watch": "ng test --watch",
-    "test:coverage": "ng test --coverage --watch=false",
-    "lint": "eslint . --ext .ts,.html",
+    "test:coverage": "ng test --coverage --coverage-reporters=html --coverage-reporters=text-summary --coverage-reporters=json-summary --coverage-reporters=cobertura --watch=false",
+    "lint": "eslint \"src/**/*.{ts,html}\"",
     "format": "prettier --write \"src/**/*.{ts,html,scss,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,json,md}\"",
     "analyze": "ng build --stats-json && webpack-bundle-analyzer dist/angular-init/stats.json"

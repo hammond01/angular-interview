@@ -29,7 +29,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        file: ./coverage/cobertura-coverage.xml
+        file: ./coverage/angular-init/cobertura-coverage.xml
         fail_ci_if_error: false
         verbose: true
 
@@ -39,7 +39,7 @@ jobs:
       with:
         script: |
           const fs = require('fs');
-          const coverage = fs.readFileSync('./coverage/coverage-summary.json', 'utf8');
+          const coverage = fs.readFileSync('./coverage/angular-init/coverage-summary.json', 'utf8');
           const data = JSON.parse(coverage);
           const total = data.total;
 
